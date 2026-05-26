@@ -15,8 +15,8 @@ const cuts: Cut[] = [
   { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80", h: "h-96", style: "Hot Towel", by: "Gustavo" },
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80", h: "h-80", style: "Classic Cut", by: "Marco" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80", h: "h-72", style: "Beard Sculpt", by: "Samir" },
-  { src: null, h: "h-96", style: "Signature Fade", by: "Yaw" },
-  { src: null, h: "h-72", style: "Kids' Cut", by: "Mandip" },
+  { src: "/gallery/yaw-signature-fade.jpg", h: "h-96", style: "Signature Fade", by: "Yaw" },
+  { src: "/gallery/mandip-kids-cut.jpg", h: "h-72", style: "Kids' Cut", by: "Mandip" },
   { src: null, h: "h-80", style: "Design Line", by: "Sonny" },
   { src: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80", h: "h-96", style: "Skin Fade", by: "Amare" },
 ];
