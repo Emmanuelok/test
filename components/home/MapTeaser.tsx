@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { NLMap } from "@/components/locations/NLMap";
+import { NLMapReal } from "@/components/locations/NLMapReal";
 
 export function MapTeaser() {
   return (
@@ -28,7 +28,7 @@ export function MapTeaser() {
         </Link>
       </div>
       <div className="max-w-7xl mx-auto px-6">
-        <NLMap />
+        <NLMapReal />
       </div>
     </section>
   );

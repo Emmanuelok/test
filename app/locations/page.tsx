@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { locations, formatHoursLine, isOpenNow } from "@/lib/data/locations";
 import { MapPin, Phone, Clock, ChevronRight, Car } from "lucide-react";
-import { NLMap } from "@/components/locations/NLMap";
+import { NLMapReal } from "@/components/locations/NLMapReal";
 
 export const metadata = {
   title: "Locations",
@@ -24,7 +24,7 @@ export default function LocationsPage() {
         </p>
 
         <div className="mt-16">
-          <NLMap />
+          <NLMapReal />
         </div>
 
         <div className="mt-24 grid lg:grid-cols-2 gap-3">
