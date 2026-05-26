@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { locations, formatHoursLine, isOpenNow } from "@/lib/data/locations";
 import { MapPin, Phone, Clock, ChevronRight, Car } from "lucide-react";
+import { NLMap } from "@/components/locations/NLMap";
 
 export const metadata = {
   title: "Locations",
@@ -19,11 +20,14 @@ export default function LocationsPage() {
           <em className="text-gold">One province.</em>
         </h1>
         <p className="mt-6 max-w-2xl text-ink-dim text-lg">
-          The same craft, the same chair, six different neighbourhoods. Walk
-          in or book ahead — every door is open to you.
+          The same craft, six different neighbourhoods. Walk in or book ahead.
         </p>
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-3">
+        <div className="mt-16">
+          <NLMap />
+        </div>
+
+        <div className="mt-24 grid lg:grid-cols-2 gap-3">
           {locations.map((l) => {
             const open = isOpenNow(l);
             return (

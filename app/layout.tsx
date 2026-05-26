@@ -6,6 +6,9 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConciergeMount } from "@/components/concierge/ConciergeMount";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
 import { CursorAura } from "@/components/motion/CursorAura";
+import { ThemeScript } from "@/components/theme/ThemeScript";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { PageTransition } from "@/components/motion/PageTransition";
 
 const display = Inter({
   variable: "--font-display",
@@ -49,11 +52,13 @@ export const metadata: Metadata = {
     title: "1949 Barber Shop — The UN of Barbershops",
     description:
       "Six locations across Newfoundland & Labrador. Precision fades, hot-towel shaves, and an AI concierge that books you in 30 seconds.",
+    images: ["/api/og"],
   },
   twitter: {
     card: "summary_large_image",
     title: "1949 Barber Shop",
     description: "The UN of Barbershops — Newfoundland & Labrador.",
+    images: ["/api/og"],
   },
   icons: {
     icon: [
@@ -73,10 +78,16 @@ export default function RootLayout({
       className={`${display.variable} ${serif.variable} antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body className="grain min-h-screen flex flex-col bg-bg text-ink">
+        <ScrollProgress />
         <CursorAura />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <SiteFooter />
         <ConciergeMount />
         <LocalBusinessJsonLd />

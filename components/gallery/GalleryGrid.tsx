@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { SafeImage } from "@/components/ui/SafeImage";
 
 type Cut = {
   src: string;
@@ -20,13 +20,13 @@ const cuts: Cut[] = [
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80", style: "Classic", by: "Marco", loc: "CBS", h: "square" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80", style: "Beard", by: "Samir", loc: "Gander", h: "wide" },
   { src: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Yaw", loc: "Topsail Rd", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1620331317344-30b88c7cb4f0?auto=format&fit=crop&w=900&q=80", style: "Kids", by: "Mandip", loc: "Freshwater", h: "square" },
-  { src: "https://images.unsplash.com/photo-1593702288056-f173a5f31a13?auto=format&fit=crop&w=900&q=80", style: "Design", by: "Sonny", loc: "Topsail Rd", h: "tall" },
+  { src: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80", style: "Kids", by: "Mandip", loc: "Freshwater", h: "square" },
+  { src: "https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=80", style: "Design", by: "Sonny", loc: "Topsail Rd", h: "tall" },
   { src: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Amare", loc: "CBS", h: "square" },
   { src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80", style: "Classic", by: "Gustavo", loc: "Torbay Rd", h: "wide" },
-  { src: "https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=80", style: "Beard", by: "Marco", loc: "CBS", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Sonny", loc: "Mt. Pearl", h: "square" },
-  { src: "https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?auto=format&fit=crop&w=900&q=80", style: "Design", by: "Kenji", loc: "Topsail Rd", h: "tall" },
+  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80", style: "Beard", by: "Marco", loc: "CBS", h: "tall" },
+  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80", style: "Fade", by: "Sonny", loc: "Mt. Pearl", h: "square" },
+  { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1200&q=80", style: "Design", by: "Kenji", loc: "Topsail Rd", h: "tall" },
 ];
 
 const FILTERS = ["All", "Fade", "Classic", "Beard", "Kids", "Design", "Shave"] as const;
@@ -87,12 +87,13 @@ export function GalleryGrid() {
                 HEIGHTS[c.h],
               )}
             >
-              <Image
+              <SafeImage
                 src={c.src}
                 alt={`${c.style} by ${c.by}`}
                 fill
                 sizes="(min-width: 1024px) 25vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+                fallbackLabel={`${c.style.toUpperCase()} · ${c.by.toUpperCase()}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
               <div className="absolute inset-x-0 bottom-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform">

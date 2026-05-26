@@ -21,6 +21,7 @@ const Youtube = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 import { locations } from "@/lib/data/locations";
+import { Newsletter } from "@/components/site/Newsletter";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -126,7 +127,24 @@ export function SiteFooter() {
                 <MapPin className="size-3.5 mt-1 text-gold shrink-0" />
                 <span>St. John&apos;s · CBS · Mt. Pearl · Gander</span>
               </li>
+              <li>
+                <Link href="/lookup" className="hover:text-ink">Find my booking →</Link>
+              </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-line grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-6">
+            <Newsletter />
+          </div>
+          <div className="lg:col-span-6 lg:text-right">
+            <p className="serif text-3xl lg:text-4xl text-ink-dim italic">
+              &ldquo;A chair for everyone who shows up.&rdquo;
+            </p>
+            <p className="mt-2 text-[10px] tracking-eyebrow text-gold">
+              SINCE 1949 · NEWFOUNDLAND
+            </p>
           </div>
         </div>
 

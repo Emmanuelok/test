@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, MapPin, Phone, Sparkles } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const nav = [
@@ -88,12 +89,15 @@ export function SiteHeader() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
             <Link
               href="/concierge"
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm text-ink-dim hover:text-gold transition-colors"
             >
               <Sparkles className="size-3.5" />
-              Ask Concierge
+              Ask
             </Link>
             <Link
               href="/book"
@@ -139,6 +143,12 @@ export function SiteHeader() {
                   <Sparkles className="size-4" />
                   AI Concierge
                 </Link>
+              </li>
+              <li className="pt-4 flex items-center justify-between">
+                <span className="text-xs tracking-eyebrow text-ink-mute">
+                  THEME
+                </span>
+                <ThemeToggle />
               </li>
             </ul>
           </div>

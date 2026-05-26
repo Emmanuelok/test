@@ -5,7 +5,7 @@ import { Story } from "@/components/home/Story";
 import { Gallery } from "@/components/home/Gallery";
 import { AIShowcase } from "@/components/home/AIShowcase";
 import { ClubTeaser } from "@/components/home/ClubTeaser";
-import { LocationsGrid } from "@/components/home/LocationsGrid";
+import { MapTeaser } from "@/components/home/MapTeaser";
 import { Press } from "@/components/home/Press";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FinalCTA } from "@/components/home/FinalCTA";
@@ -20,7 +20,7 @@ export default function HomePage() {
       <Gallery />
       <AIShowcase />
       <ClubTeaser />
-      <LocationsGrid />
+      <MapTeaser />
       <Press />
       <Testimonials />
       <FinalCTA />

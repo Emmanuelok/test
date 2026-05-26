@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/group",
     "/careers",
     "/press",
+    "/lookup",
   ];
   return [
     ...fixed.map((p) => ({
