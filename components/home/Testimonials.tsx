@@ -1,66 +1,56 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const reviews = [
-  {
-    quote:
-      "Sonny is a wizard with the clippers. Best fade I've had since I moved to the island. Worth the wait every time.",
-    name: "Connor M.",
-    where: "Topsail Rd · Google",
-  },
-  {
-    quote:
-      "Took my four-year-old in nervous about her first haircut. They had her laughing in two minutes and the cut was perfect.",
-    name: "Sarah K.",
-    where: "CBS · Facebook",
-  },
-  {
-    quote:
-      "Walked in from Bay Roberts on a Saturday at noon. Twenty-minute wait, gorgeous skin fade, twenty-six bucks. Unreal value.",
-    name: "Liam P.",
-    where: "Torbay Rd · Google",
-  },
-  {
-    quote:
-      "The hot-towel shave at Topsail is the most relaxing forty minutes in my month. I tip 30%. They deserve it.",
-    name: "Devon R.",
-    where: "Topsail Rd · Fresha",
-  },
-  {
-    quote:
-      "I'm from Manila. Sonny speaks Tagalog. He understood exactly what I wanted before I finished explaining it. This place is special.",
-    name: "Mark V.",
-    where: "Mt. Pearl · Instagram",
-  },
-  {
-    quote:
-      "They blended my grey at the temples in five minutes. I look ten years younger. My wife noticed. My boss noticed. Don't tell.",
-    name: "Patrick D.",
-    where: "Freshwater · Google",
-  },
+  { quote: "Best fade since I moved to the island.", name: "Connor M.", where: "Topsail Rd · Google" },
+  { quote: "First haircut for a four-year-old. Perfect.", name: "Sarah K.", where: "CBS · Facebook" },
+  { quote: "Twenty-six bucks. Unreal.", name: "Liam P.", where: "Torbay Rd · Google" },
+  { quote: "The most relaxing forty minutes of my month.", name: "Devon R.", where: "Topsail Rd · Fresha" },
+  { quote: "Sonny spoke Tagalog. Understood me instantly.", name: "Mark V.", where: "Mt. Pearl · Instagram" },
+  { quote: "Look ten years younger. My wife noticed.", name: "Patrick D.", where: "Freshwater · Google" },
 ];
 
 export function Testimonials() {
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12">
-          <div className="tracking-eyebrow text-[10px] text-gold mb-4">
-            — Word from the chair
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 flex items-end justify-between"
+        >
+          <div>
+            <div className="tracking-eyebrow text-[10px] text-gold mb-4">
+              — From the chair
+            </div>
+            <h2 className="serif text-5xl lg:text-7xl leading-[0.9] tracking-display">
+              <em className="text-gold">1,800+</em> five-stars.
+            </h2>
           </div>
-          <h2 className="serif text-5xl lg:text-6xl leading-[0.95] tracking-display">
-            1,800+ five-star reviews
-            <br />
-            <em className="text-gold">across the province.</em>
-          </h2>
-        </div>
+          <div className="text-right hidden lg:block">
+            <div className="serif text-6xl gold-text leading-none">★★★★★</div>
+            <div className="text-[10px] tracking-eyebrow text-ink-mute mt-2">
+              GOOGLE · FACEBOOK · FRESHA
+            </div>
+          </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {reviews.map((r, i) => (
-            <figure
+            <motion.figure
               key={i}
-              className="border border-line bg-bg-elev/40 p-6 rounded-sm flex flex-col justify-between"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.06, duration: 0.7 }}
+              className="border border-line bg-bg-elev/40 p-6 rounded-sm flex flex-col justify-between hover:border-gold/30 transition-colors"
             >
               <div>
                 <div className="text-gold text-sm">★★★★★</div>
-                <blockquote className="serif italic text-xl leading-snug mt-3 text-ink">
+                <blockquote className="serif italic text-2xl leading-snug mt-3 text-ink">
                   &ldquo;{r.quote}&rdquo;
                 </blockquote>
               </div>
@@ -70,7 +60,7 @@ export function Testimonials() {
                   {r.where}
                 </div>
               </figcaption>
-            </figure>
+            </motion.figure>
           ))}
         </div>
       </div>

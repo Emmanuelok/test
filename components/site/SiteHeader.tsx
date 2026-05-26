@@ -9,8 +9,9 @@ import { cn } from "@/lib/utils";
 const nav = [
   { href: "/services", label: "Services" },
   { href: "/locations", label: "Locations" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/team", label: "Team" },
-  { href: "/story", label: "Our Story" },
+  { href: "/club", label: "Cut Club", badge: "NEW" },
   { href: "/style-studio", label: "Style Studio", badge: "AI" },
 ];
 

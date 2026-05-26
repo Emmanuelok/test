@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Send, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { VoiceMic } from "@/components/concierge/VoiceMic";
 
 type Msg = {
   role: "user" | "assistant";
@@ -132,6 +133,7 @@ export function ConciergeChat({ compact = false }: { compact?: boolean }) {
             className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-ink-mute"
             disabled={streaming}
           />
+          <VoiceMic onTranscript={setInput} onSend={() => send(input)} />
           <button
             type="submit"
             disabled={!input.trim() || streaming}

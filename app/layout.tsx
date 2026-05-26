@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ConciergeMount } from "@/components/concierge/ConciergeMount";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
+import { CursorAura } from "@/components/motion/CursorAura";
 
 const display = Inter({
   variable: "--font-display",
@@ -73,6 +74,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="grain min-h-screen flex flex-col bg-bg text-ink">
+        <CursorAura />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

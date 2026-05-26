@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/gift-cards",
     "/notifications",
     "/app",
+    "/club",
+    "/gallery",
+    "/walk-in",
+    "/group",
+    "/careers",
+    "/press",
   ];
   return [
     ...fixed.map((p) => ({

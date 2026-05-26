@@ -1,8 +1,10 @@
 import { Hero } from "@/components/home/Hero";
 import { StatStrip } from "@/components/home/StatStrip";
+import { Signature } from "@/components/home/Signature";
 import { Story } from "@/components/home/Story";
-import { ServicesMarquee } from "@/components/home/ServicesMarquee";
+import { Gallery } from "@/components/home/Gallery";
 import { AIShowcase } from "@/components/home/AIShowcase";
+import { ClubTeaser } from "@/components/home/ClubTeaser";
 import { LocationsGrid } from "@/components/home/LocationsGrid";
 import { Press } from "@/components/home/Press";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -13,9 +15,11 @@ export default function HomePage() {
     <>
       <Hero />
       <StatStrip />
+      <Signature />
       <Story />
-      <ServicesMarquee />
+      <Gallery />
       <AIShowcase />
+      <ClubTeaser />
       <LocationsGrid />
       <Press />
       <Testimonials />

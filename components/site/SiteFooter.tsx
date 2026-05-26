@@ -70,7 +70,7 @@ export function SiteFooter() {
             <h4 className="tracking-eyebrow text-[10px] text-gold mb-4">Visit</h4>
             <ul className="space-y-2 text-sm text-ink-dim">
               <li>
-                <Link href="/locations" className="hover:text-ink">All Locations</Link>
+                <Link href="/locations" className="hover:text-ink">All locations</Link>
               </li>
               {locations.slice(0, 4).map((l) => (
                 <li key={l.slug}>
@@ -82,17 +82,20 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li><Link href="/careers" className="hover:text-ink">Careers</Link></li>
+              <li><Link href="/press" className="hover:text-ink">Press kit</Link></li>
             </ul>
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="tracking-eyebrow text-[10px] text-gold mb-4">Shop</h4>
+            <h4 className="tracking-eyebrow text-[10px] text-gold mb-4">Book</h4>
             <ul className="space-y-2 text-sm text-ink-dim">
-              <li><Link href="/book" className="hover:text-ink">Book a chair</Link></li>
-              <li><Link href="/services" className="hover:text-ink">Services</Link></li>
-              <li><Link href="/team" className="hover:text-ink">The team</Link></li>
+              <li><Link href="/book" className="hover:text-ink">A chair</Link></li>
+              <li><Link href="/walk-in" className="hover:text-ink">Virtual queue</Link></li>
+              <li><Link href="/group" className="hover:text-ink">Group / wedding</Link></li>
+              <li><Link href="/club" className="hover:text-ink">Cut Club</Link></li>
               <li><Link href="/gift-cards" className="hover:text-ink">Gift cards</Link></li>
-              <li><Link href="/loyalty" className="hover:text-ink">Loyalty &amp; Rewards</Link></li>
+              <li><Link href="/loyalty" className="hover:text-ink">Rewards</Link></li>
             </ul>
           </div>
 
@@ -102,8 +105,9 @@ export function SiteFooter() {
               <li><Link href="/concierge" className="hover:text-ink">AI Concierge</Link></li>
               <li><Link href="/style-studio" className="hover:text-ink">Style Studio</Link></li>
               <li><Link href="/match" className="hover:text-ink">Barber Match</Link></li>
-              <li><Link href="/wait-times" className="hover:text-ink">Live Wait Times</Link></li>
-              <li><Link href="/account" className="hover:text-ink">My Account</Link></li>
+              <li><Link href="/wait-times" className="hover:text-ink">Live wait times</Link></li>
+              <li><Link href="/gallery" className="hover:text-ink">Gallery</Link></li>
+              <li><Link href="/account" className="hover:text-ink">My account</Link></li>
             </ul>
           </div>
 
