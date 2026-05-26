@@ -5,15 +5,19 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { SafeImage } from "@/components/ui/SafeImage";
 
-// Confirmed-working Unsplash photo IDs (stable, high-traffic public photos).
-const cuts = [
+// Hand-verified Unsplash IDs that actually depict the labelled service.
+// Unverified cells use null src → SafeImage renders the branded medallion.
+// We refuse to misattribute random stock as 1949's work.
+type Cut = { src: string | null; h: string; style: string; by: string };
+
+const cuts: Cut[] = [
   { src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80", h: "h-72", style: "Skin Fade", by: "Sonny" },
   { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80", h: "h-96", style: "Hot Towel", by: "Gustavo" },
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80", h: "h-80", style: "Classic Cut", by: "Marco" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80", h: "h-72", style: "Beard Sculpt", by: "Samir" },
-  { src: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80", h: "h-96", style: "Signature Fade", by: "Yaw" },
-  { src: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80", h: "h-72", style: "Kids' Cut", by: "Mandip" },
-  { src: "https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=80", h: "h-80", style: "Design Line", by: "Sonny" },
+  { src: null, h: "h-96", style: "Signature Fade", by: "Yaw" },
+  { src: null, h: "h-72", style: "Kids' Cut", by: "Mandip" },
+  { src: null, h: "h-80", style: "Design Line", by: "Sonny" },
   { src: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80", h: "h-96", style: "Skin Fade", by: "Amare" },
 ];
 
@@ -65,6 +69,18 @@ export function Gallery() {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 mt-8 text-center text-xs text-ink-mute tracking-eyebrow">
+        Live shop work lives at{" "}
+        <a
+          href="https://www.instagram.com/1949barbers/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gold hover:text-gold-bright"
+        >
+          @1949BARBERS
+        </a>
       </div>
     </section>
   );

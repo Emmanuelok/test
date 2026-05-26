@@ -7,26 +7,29 @@ import { cn } from "@/lib/utils";
 import { SafeImage } from "@/components/ui/SafeImage";
 
 type Cut = {
-  src: string;
+  src: string | null;
   style: "Fade" | "Classic" | "Beard" | "Kids" | "Design" | "Shave";
   by: string;
   loc: string;
   h: "tall" | "square" | "wide";
 };
 
+// Only Unsplash IDs that have been visually verified to depict the labelled
+// service are used. The rest are deliberately null → SafeImage renders the
+// branded medallion card. Real shop work lives on @1949barbers.
 const cuts: Cut[] = [
   { src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Sonny", loc: "Topsail Rd", h: "tall" },
   { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80", style: "Shave", by: "Gustavo", loc: "Torbay Rd", h: "tall" },
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=80", style: "Classic", by: "Marco", loc: "CBS", h: "square" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80", style: "Beard", by: "Samir", loc: "Gander", h: "wide" },
-  { src: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Yaw", loc: "Topsail Rd", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80", style: "Kids", by: "Mandip", loc: "Freshwater", h: "square" },
-  { src: "https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=80", style: "Design", by: "Sonny", loc: "Topsail Rd", h: "tall" },
+  { src: null, style: "Fade", by: "Yaw", loc: "Topsail Rd", h: "tall" },
+  { src: null, style: "Kids", by: "Mandip", loc: "Freshwater", h: "square" },
+  { src: null, style: "Design", by: "Sonny", loc: "Topsail Rd", h: "tall" },
   { src: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80", style: "Fade", by: "Amare", loc: "CBS", h: "square" },
-  { src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80", style: "Classic", by: "Gustavo", loc: "Torbay Rd", h: "wide" },
-  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80", style: "Beard", by: "Marco", loc: "CBS", h: "tall" },
-  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80", style: "Fade", by: "Sonny", loc: "Mt. Pearl", h: "square" },
-  { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1200&q=80", style: "Design", by: "Kenji", loc: "Topsail Rd", h: "tall" },
+  { src: null, style: "Classic", by: "Gustavo", loc: "Torbay Rd", h: "wide" },
+  { src: null, style: "Beard", by: "Marco", loc: "CBS", h: "tall" },
+  { src: null, style: "Fade", by: "Sonny", loc: "Mt. Pearl", h: "square" },
+  { src: null, style: "Design", by: "Kenji", loc: "Topsail Rd", h: "tall" },
 ];
 
 const FILTERS = ["All", "Fade", "Classic", "Beard", "Kids", "Design", "Shave"] as const;

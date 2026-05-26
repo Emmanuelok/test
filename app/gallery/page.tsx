@@ -1,4 +1,5 @@
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { InstagramSection } from "@/components/social/InstagramSection";
 
 export const metadata = {
   title: "Portfolio",
@@ -22,6 +23,7 @@ export default function GalleryPage() {
           <GalleryGrid />
         </div>
       </div>
+      <InstagramSection />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { StatStrip } from "@/components/home/StatStrip";
 import { Signature } from "@/components/home/Signature";
 import { Story } from "@/components/home/Story";
 import { Gallery } from "@/components/home/Gallery";
+import { InstagramSection } from "@/components/social/InstagramSection";
 import { AIShowcase } from "@/components/home/AIShowcase";
 import { ClubTeaser } from "@/components/home/ClubTeaser";
 import { MapTeaser } from "@/components/home/MapTeaser";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Signature />
       <Story />
       <Gallery />
+      <InstagramSection />
       <AIShowcase />
       <ClubTeaser />
       <MapTeaser />
